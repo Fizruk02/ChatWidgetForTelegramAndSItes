@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<?php
+  
+
+    include $_SERVER['DOCUMENT_ROOT'].'/app/Db.php';
+    use app\Db;
+    $db = new Db;
+    $db->connect();
+    
+    $session=false;
+    $ssid = $_COOKIE['stelt_ssid']??false;
+    if( $ssid ) {
+        $session = $db->single('SELECT * FROM `auth_data` WHERE hash=?', [ $ssid ]);
+        print_r($session);
+    }
+?>
+
+
+<html>
+<head>
+<!--     <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    
+<style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
+
+body {
+  --text-color: #212121;
+  --second-color: #738ca7;
+  --accent-color: #2481cc;
+  --accent-line-color: #4ca3e2;
+  --accent-btn-color: #2481cc;
+  --accent-btn-bghover: #e6f1f7;
+  --accent-btn-bgactive: #d4e6f1;
+  --bubble-bgcolor: #fff;
+  --bubble-border-color: #d7e3ec;
+  --voice-progress-bgcolor: #d3dbe4;
+  --radio-bghover: rgba(0, 0, 0, 0.05);
+  --popup-bgcolor: #fff;
+  --radio-item-color: #2392e7;
+
+  --bubble-logo-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2024%2020%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m488.649875%2044.6098697c6.442438-2.8224615%2010.738405-4.6832009%2012.887902-5.5822181%206.137252-2.5668769%207.41252-3.0127709%208.243723-3.0276516.182815-.0030813.591576.0424775.856354.2585203.223574.1824224.285088.428849.314524.6018054.029436.1729565.066092.5669556.036954.874815-.33258%203.5138587-1.771648%2012.041067-2.503764%2015.9766489-.309785%201.6652923-.919763%202.2236562-1.510292%202.2782995-1.283356.1187526-2.257879-.8528431-3.500872-1.6721675-1.945039-1.2820809-3.043862-2.0801802-4.931859-3.3312543-2.181908-1.4458326-.767468-2.2404874.475995-3.5391756.32542-.3398729%205.979917-5.5116482%206.08936-5.9808093.013687-.0586764.02639-.2773944-.102829-.3928855-.129218-.1154911-.319934-.0759976-.457559-.0445881-.195081.044522-3.302306%202.1096922-9.321675%206.1955107-.881976.6089971-1.680842.9057209-2.396598.8901714-.789064-.017142-2.306907-.4486274-3.435267-.8174505-1.38398-.4523766-2.48394-.6915513-2.388158-1.4598267.049889-.4001653.59791-.8094133%201.644061-1.227744z%22%20fill%3D%22%2333afed%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate%28-487%20-36%29%22%2F%3E%3C%2Fsvg%3E');
+  --verified-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2226%22%20viewBox%3D%220%200%2026%2026%22%20width%3D%2226%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m14.378741%201.509638%201.818245%201.818557c.365651.365716.861601.571194%201.378741.571259l2.574273.000312c1.01361.000117%201.846494.773578%201.940861%201.762436l.008905.187798-.000312%202.5727c-.000065.517322.205439%201.013454.571259%201.379222l1.819649%201.819337c.714441.713427.759174%201.843179.134563%202.609139l-.134797.148109-1.819181%201.8182502c-.365963.3657823-.571558.8620196-.571493%201.3794456l.000312%202.5737972c.000559%201.0136048-.772668%201.846676-1.7615%201.9412861l-.188266.0084786-2.573792-.0003107c-.517426-.0000624-1.013675.2055248-1.379456.5714956l-1.818245%201.8191823c-.71331.7145515-1.843049.7594886-2.609113.1349998l-.148135-.1347645-1.8193435-1.8196542c-.3657628-.3658252-.8618987-.5713214-1.3792103-.571259l-2.5727052.0003107c-1.0136048.0001222-1.846676-.7731321-1.9412861-1.761968l-.0089492-.1877967-.0003107-2.5742678c-.0000624-.5171478-.2055495-1.0130926-.571259-1.3787397l-1.8185622-1.8182515c-.7139886-.713869-.758706-1.843647-.1340846-2.609607l.1338493-.148109%201.8190328-1.81935c.3655665-.365625.5709613-.861471.5710237-1.378494l.0003107-2.573181c.0006006-1.076777.8734635-1.949636%201.9502353-1.950234l2.5731758-.000312c.5170321-.000065%201.0128768-.205452%201.3785044-.571025l1.8193448-1.819038c.761592-.761449%201.996254-.761345%202.757716.000247zm3.195309%208.047806c-.426556-.34125-1.032655-.306293-1.417455.060333l-.099151.108173-4.448444%205.55815-1.7460313-1.74707-.1104961-.096564c-.4229264-.32188-1.0291801-.289692-1.4154413.096564-.3862612.386269-.4184492.992511-.0965653%201.41544l.0965653.1105%202.5999987%202.5999987.109876.0961467c.419874.320359%201.015131.2873897%201.397071-.0773773l.098579-.107692%205.2-6.4999961.083772-.120484c.273208-.455884.174278-1.054885-.252278-1.396122z%22%20fill%3D%22%2333AFED%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --views-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20width%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m8%200c2.8897625%200%205.2230958%201.66666667%207%205-1.7769042%203.33333333-4.1102375%205-7%205-2.88976248%200-5.22309581-1.66666667-7-5%201.77690419-3.33333333%204.11023752-5%207-5zm0%201.48148148c-1.98523978%200-3.59459459%201.5752944-3.59459459%203.51851852s1.60935481%203.51851852%203.59459459%203.51851852%203.5945946-1.5752944%203.5945946-3.51851852-1.60935482-3.51851852-3.5945946-3.51851852zm0%201.85185185c.94037674%200%201.7027027.74619209%201.7027027%201.66666667s-.76232596%201.66666667-1.7027027%201.66666667-1.7027027-.74619209-1.7027027-1.66666667.76232596-1.66666667%201.7027027-1.66666667z%22%20fill%3D%22%238197af%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --voters-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20width%3D%2212%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m3.60486756.00162755%204.54930464-.00162755c1.33727811%200%201.82220747.13923842%202.3110964.40069906.4888888.26146064.8725717.6451435%201.1340323%201.13403238l.0922854.18482021c.2018093.43861897.3084137.9561578.3084137%202.12627615v4.3083444c0%201.33727811-.1392384%201.82220747-.4006991%202.3110964-.2614606.4888888-.6451435.8725717-1.1340323%201.1340323l-.1848203.0922854c-.43861892.2018093-.95615775.3084137-2.1262761.3084137h-4.3083444c-1.33727811%200-1.82220747-.1392384-2.31109636-.4006991-.48888888-.2614606-.87257174-.6451435-1.13403238-1.1340323l-.09228534-.1848203c-.18739436-.407289-.29269878-.88262629-.30678617-1.88531586l-.00162755-4.54930464c0-1.33727811.13923842-1.82220747.40069906-2.31109636.26146064-.48888888.6451435-.87257174%201.13403238-1.13403238l.18482021-.09228534c.40728905-.18739436.88262634-.29269878%201.88531591-.30678617zm6.42546254%202.96804236c-.26626658-.26626656-.68293026-.29047261-.97654175-.07261815l-.08411844.07261815-3.96966991%203.96933009-1.46966991-1.46933009-.08411844-.07261815c-.29361149-.21785446-.71027517-.19364841-.97654174.07261815-.26626656.26626657-.29047261.68293025-.07261815.97654174l.07261815.08411844%202%202%20.08411844.07261815c.26098799.19364841.61920241.19603913.88259105.00717216l.09395069-.07979031%204.50000001-4.5.0726181-.08411844c.2178545-.29361149.1936484-.71027517-.0726181-.97654174z%22%20fill%3D%22%238197af%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+
+  --light-btn-text: #fff;
+  --voice-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m5%203.24662107v17.50675783c0%20.6750147.54720753%201.2222223%201.22222222%201.2222223.23559715%200%20.46617345-.0680925.66397379-.196081l13.52794929-8.7533789c.5667222-.3667026.7288701-1.1233929.3621675-1.6901151-.0937888-.1449463-.2172212-.2683787-.3621675-.3621675l-13.52794929-8.75337893c-.5667222-.3667026-1.3234125-.20455468-1.69011509.36216752-.12798845.19780033-.19608092.42837663-.19608092.66397378z%22%20transform%3D%22translate%281%200%29%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+  --docfile-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%20width%3D%2230%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m16.6538365%204.06433079c.1979918.04563221.3731812.11819804.5454493.22593253l.1128317.07532436c.1136531.08153308.2382757.18981438.4504173.39794253l5.3612119%205.36021649c.3651614.3651614.4782555.5046993.58599.6769675.1077345.1722681.1803003.3474575.2259325.5454493l.0265217.1330464c.0264976.1610204.0378091.3583423.0378091.7599994v11.1969055c0%20.8915187-.0928256%201.214805-.2671327%201.5407309s-.4300957.5817145-.7560216.7560216-.6492122.2671327-1.5407309.2671327h-12.8722296c-.89151874%200-1.21480498-.0928256-1.5407309-.2671327-.32592593-.1743071-.5817145-.4300957-.7560216-.7560216-.16089885-.3008547-.2523697-.5994602-.26549007-1.3448229l-.00164263-17.0681376c0-.89151874.09282561-1.21480498.2671327-1.5407309.1743071-.32592593.43009567-.5817145.7560216-.7560216.3008547-.16089885.5994602-.2523697%201.34482293-.26549007l7.39281347-.00164263c.5164163%200%20.695054.01869859.8930458.06433079zm-.5073899%202.7892226c-.0937682.09376819-.1464466.22094515-.1464466.35355339v3.79289322c0%20.5522847.4477153%201%201%201h3.7928932c.2761424%200%20.5-.2238576.5-.5%200-.1326082-.0526784-.2597852-.1464466-.3535534l-4.2928932-4.29289321c-.1952622-.19526215-.5118446-.19526215-.7071068%200z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --docaudio-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%20width%3D%2230%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m15%205c0-1.1045695.8954305-2%202-2h4c1.1045695%200%202%20.8954305%202%202v4h-6v12c0%202.6887547-2.1223067%204.8818181-4.7831104%204.9953805l-.2168896.0046195c-2.76142375%200-5-2.2385763-5-5s2.23857625-5%205-5c1.1261445%200%202.1653335.3723009%203.0011995%201.0005351z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  --pollopt-correct-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%226%22%20viewBox%3D%220%200%208%206%22%20width%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M1%2C3.43181818%20L2.820907%2C5.19754618%20C2.85078174%2C5.22651562%202.90134144%2C5.22445679%202.9333123%2C5.19345474%20L7%2C1.25%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.2%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  --pollopt-incorrect-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20width%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M%201.6%206.4%20L%206.4%201.6%20M%206.4%206.4%20L%201.6%201.6%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.2%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  --radio-item-icon-svg: url('data:image/svg+xml,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%3E%3Crect%20height%3D%225.5%22%20rx%3D%221.1%22%20transform%3D%22matrix%28.70710678%20-.70710678%20.70710678%20.70710678%20-6.903479%208.428501%29%22%20width%3D%222.2%22%20x%3D%225.622361%22%20y%3D%229.797487%22%2F%3E%3Crect%20height%3D%2211%22%20rx%3D%221.1%22%20transform%3D%22matrix%28.70710678%20.70710678%20-.70710678%20.70710678%2010.937311%20-5.071194%29%22%20width%3D%222.2%22%20x%3D%2210.490128%22%20y%3D%225.166905%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+
+  --bgcolor0: #e17076;
+  --bgcolor1: #faa774;
+  --bgcolor2: #a695e7;
+  --bgcolor3: #7bc862;
+  --bgcolor4: #6ec9cb;
+  --bgcolor5: #65aadd;
+  --bgcolor6: #ee7aae;
+
+  --bgcolor0-top: #ff885e;
+  --bgcolor0-bottom: #ff516a;
+  --bgcolor1-top: #ffcd6a;
+  --bgcolor1-bottom: #ffa85c;
+  --bgcolor2-top: #82b1ff;
+  --bgcolor2-bottom: #665fff;
+  --bgcolor3-top: #a0de7e;
+  --bgcolor3-bottom: #54cb68;
+  --bgcolor4-top: #53edd6;
+  --bgcolor4-bottom: #28c9b7;
+  --bgcolor5-top: #72d5fd;
+  --bgcolor5-bottom: #2a9ef1;
+  --bgcolor6-top: #e0a2f3;
+  --bgcolor6-bottom: #d669ed;
+
+  --color0: #c03d33; /* red */
+  --color1: #ce671b; /* orange */
+  --color2: #8544d6; /* purple */
+  --color3: #4fad2d; /* green */
+  --color4: #2996ad; /* cyan */
+  --color5: #168acd; /* blue */
+  --color6: #cd4073; /* pink */
+
+  --spoiler-bgcolor: #e3e5e8;
+}
+
+body.widget_frame_base {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 16px;
+}
+a:hover :has(.emoji) {
+  text-decoration: inherit;
+}
+.auth_user_photo,
+.auth_user_photo img {
+  display: inline-block;
+  vertical-align: top;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+.auth_user_photo {
+  position: relative;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 16px;
+  line-height: 37px;
+  color: #fff;
+  background: #e57979;
+  overflow: hidden;
+}
+.auth_user_photo:before {
+  content: attr(data-content);
+  font-weight: 500;
+}
+.auth_user_photo img {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+.bgcolor2 { background: var(--bgcolor2) linear-gradient(var(--bgcolor2-top), var(--bgcolor2-bottom)); } /* red */ /* orange */ /* purple */ /* green */ /* cyan */ /* blue */ /* pink */
+button.auth_button {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 17px;
+  background-color: #54a9eb;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 7px 16px 6px;
+  margin: 0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+button.auth_button:focus,
+button.auth_button:active:focus {
+  outline: none;
+  box-shadow: none;
+}
+.auth_button_icon {
+  display: inline-block;
+  vertical-align: top;
+  background: no-repeat 0 0;
+}
+.auth button.auth_button .auth_button_icon {
+  background: url('data:image/svg+xml,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m1.95617055%2011.392196c5.77764656-2.42328736%209.63031585-4.02086673%2011.55800785-4.79273807%205.5039525-2.20384954%206.6476266-2.5866818%207.3930574-2.59932314.1639507-.00278035.5305319.0363352.7679878.22182361.2005031.15662277.2556695.36819788.2820684.51669348.026399.1484956.0592719.48677234.0331404.75109194-.2982611%203.0169019-1.5888322%2010.33812718-2.2454015%2013.71710898-.2778191%201.4297738-.8288514%201.7357846-1.3584441%201.7826999-1.1509274.1019576-2.0208916-.5588425-3.1356211-1.2622918-1.7443316-1.1007592-2.3854935-1.3972358-4.0786694-2.4713734-1.95675765-1.2413519-.8891962-1.8911034.2259543-3.0061212.2918402-.2918054%205.3989024-4.83750096%205.497052-5.24030969.0122753-.05037796-.1557336-.55407742-.2716182-.65323489-.1158847-.09915747-.2869204-.06524947-.4103446-.03828214-.17495.03822537-2.9615423%201.81132342-8.35977698%205.31929412-.79096496.5228681-1.50739646.7776269-2.1492945.7642766-.70764107-.0147176-2.06885864-.3851791-3.08078398-.7018404-1.24116762-.388398-1.69932554-.5713149-1.61342745-1.2309348.04474105-.3435709.36011227-.7024173.94611366-1.0765391z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E') no-repeat 0 -1px;
+}
+.auth.large button.auth_button {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 9px 21px 11px;
+  border-radius: 20px;
+}
+.auth.large button.auth_button .auth_button_icon {
+  width: 24px;
+  height: 22px;
+  margin: 0 13px -2px -7px;
+}
+.auth .auth_user_photo {
+  vertical-align: top;
+  cursor: pointer;
+}
+.auth.large .auth_user_photo,
+.auth.large .auth_user_photo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.auth.large .auth_user_photo {
+  font-size: 19px;
+  line-height: 42px;
+  margin-left: 6px;
+}
+
+
+</style>
+
+    
+</head>
+    <body class="widget_frame_base">
+        <div class="auth large">
+            <button class="btn auth_button" onclick="auth.get();">
+                <i class="auth_button_icon"></i>Войти как <span dir="auto"><?php echo $session['first_name']; ?></span>
+            </button>
+            <i class="auth_user_photo bgcolor2" data-content="<?php echo mb_substr($session['first_name'],0,1); ?>" onclick="auth.get()">
+                <?php echo $session['photo_url']?'<img src="'.$session['photo_url'].'">':''; ?>
+            </i>
+        </div>
+    </body>
+</body>
+<script src="/js/qw.js"></script>
+<script>
+
+var auth={
+    activePopup:false,
+    botId:5661623456,
+    paramsEncoded:"origin=https%3A%2F%2Fteleton.me",
+    host:"https://oauth.telegram.org",
+    get:()=> {
+        let width = 550, height = 470,
+        left = Math.max(0, (screen.width - width) / 2) + (screen.availLeft | 0), top = Math.max(0, (screen.height - height) / 2) + (screen.availTop | 0);
+        auth.activePopup = window.open(auth.host+'/auth?bot_id='+auth.botId+"&origin=https%3A%2F%2Fteleton.me", 'telegram_oauth', 'width=' + width + ',height='+ height +',left=' + left + ',top=' + top + ',status=0,location=0,menubar=0,toolbar=0');
+        auth.authFinished = false;
+        auth.activePopup&&auth.activePopup.focus();
+    },
+
+    res:d=>{
+        qw.post('/tools/auth/p.php?q=auth', d, r=>{
+            qw.cookie.set('stelt_ssid', r.ssid);
+            document.location.reload();
+        },"json")
+    }
+}
+window.addEventListener("message", e=> {
+  if (e.origin===auth.host) {
+      let d=JSON.parse(e.data);
+      if(d.event==='auth_result') return auth.res(d.result);
+      console.log(d.event);
+  }
+});
+    
+</script>
+</html>

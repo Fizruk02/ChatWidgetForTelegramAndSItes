@@ -1,0 +1,299 @@
+2022-07-14 10:01:42 pid:41744 Workerman[server.php] status 
+2022-07-14 10:01:42 pid:41744 Workerman[server.php] not run
+2022-07-14 10:01:48 pid:41745 Workerman[server.php] connections 
+2022-07-14 10:01:48 pid:41745 Workerman[server.php] not run
+2022-07-14 10:01:56 pid:41746 Workerman[server.php] start in DEBUG mode
+2022-07-14 10:03:04 pid:41746 Workerman[server.php] stopping ...
+2022-07-14 10:03:04 pid:41746 Workerman[server.php] has been stopped
+2022-07-14 10:03:09 pid:41853 Workerman[server.php] status 
+2022-07-14 10:03:09 pid:41853 Workerman[server.php] not run
+2022-07-14 10:03:18 pid:41870 Workerman[server.php] start in DEBUG mode
+2022-07-14 10:45:09 pid:41870 Workerman[server.php] stopping ...
+2022-07-14 10:45:09 pid:41870 Workerman[server.php] has been stopped
+2022-07-14 10:45:25 pid:44737 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:14:35 pid:44737 Workerman[server.php] stopping ...
+2022-07-14 11:14:35 pid:44737 Workerman[server.php] has been stopped
+2022-07-14 11:14:42 pid:46707 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:28:45 pid:46707 Workerman[server.php] stopping ...
+2022-07-14 11:28:45 pid:46707 Workerman[server.php] has been stopped
+2022-07-14 11:28:46 pid:47576 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:30:36 pid:47576 Workerman[server.php] stopping ...
+2022-07-14 11:30:36 pid:47576 Workerman[server.php] has been stopped
+2022-07-14 11:30:37 pid:47706 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:48:28 pid:47706 Workerman[server.php] stopping ...
+2022-07-14 11:48:28 pid:47706 Workerman[server.php] has been stopped
+2022-07-14 11:50:25 pid:48970 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:50:34 pid:48971 Error: Object of class Workerman\Connection\TcpConnection could not be converted to string in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:18
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(31): Workerman\Worker::runAll()
+#8 {main}
+2022-07-14 11:50:34 pid:48970 worker[none:48971] exit with status 64000
+2022-07-14 11:50:46 pid:48975 Error: Object of class Workerman\Connection\TcpConnection could not be converted to string in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:18
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1694): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1643): Workerman\Worker::monitorWorkersForLinux()
+#8 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(552): Workerman\Worker::monitorWorkers()
+#9 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(31): Workerman\Worker::runAll()
+#10 {main}
+2022-07-14 11:50:46 pid:48970 worker[none:48975] exit with status 64000
+2022-07-14 11:51:21 pid:48970 Workerman[server.php] stopping ...
+2022-07-14 11:51:21 pid:48970 Workerman[server.php] has been stopped
+2022-07-14 11:51:23 pid:49036 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:51:49 pid:49036 Workerman[server.php] stopping ...
+2022-07-14 11:51:49 pid:49036 Workerman[server.php] has been stopped
+2022-07-14 11:51:51 pid:49043 Workerman[server.php] start in DEBUG mode
+2022-07-14 11:54:55 pid:49043 Workerman[server.php] stopping ...
+2022-07-14 11:54:55 pid:49043 Workerman[server.php] has been stopped
+2022-07-14 12:03:30 pid:49966 Workerman[server.php] start in DEBUG mode
+2022-07-14 12:03:38 pid:49966 Workerman[server.php] stopping ...
+2022-07-14 12:03:38 pid:49966 Workerman[server.php] has been stopped
+2022-07-14 12:09:32 pid:50465 Workerman[server.php] start in DEBUG mode
+2022-07-14 12:11:27 pid:50465 Workerman[server.php] stopping ...
+2022-07-14 12:11:27 pid:50465 Workerman[server.php] has been stopped
+2022-07-14 12:11:28 pid:50637 Workerman[server.php] start in DEBUG mode
+2022-07-14 13:12:57 pid:50637 Workerman[server.php] stopping ...
+2022-07-14 13:12:57 pid:50637 Workerman[server.php] has been stopped
+2022-07-14 14:05:46 pid:59317 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:06:13 pid:59317 Workerman[server.php] stopping ...
+2022-07-14 14:06:13 pid:59317 Workerman[server.php] has been stopped
+2022-07-14 14:06:15 pid:59389 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:11:00 pid:59389 Workerman[server.php] stopping ...
+2022-07-14 14:11:00 pid:59389 Workerman[server.php] has been stopped
+2022-07-14 14:11:00 pid:59668 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:18:30 pid:59668 Workerman[server.php] stopping ...
+2022-07-14 14:18:30 pid:59668 Workerman[server.php] has been stopped
+2022-07-14 14:18:45 pid:60187 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:19:11 pid:60187 Workerman[server.php] stopping ...
+2022-07-14 14:19:11 pid:60187 Workerman[server.php] stopping ...
+2022-07-14 14:19:11 pid:60187 Workerman[server.php] has been stopped
+2022-07-14 14:19:32 pid:60297 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:23:55 pid:60297 Workerman[server.php] stopping ...
+2022-07-14 14:23:55 pid:60297 Workerman[server.php] has been stopped
+2022-07-14 14:24:43 pid:60638 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:24:48 pid:60639 Error: Call to undefined function getUserId() in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:25
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(52): Workerman\Worker::runAll()
+#8 {main}
+2022-07-14 14:24:48 pid:60638 worker[none:60639] exit with status 64000
+2022-07-14 14:25:27 pid:60642 Error: Call to undefined function getUserId() in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:25
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1694): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1643): Workerman\Worker::monitorWorkersForLinux()
+#8 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(552): Workerman\Worker::monitorWorkers()
+#9 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(52): Workerman\Worker::runAll()
+#10 {main}
+2022-07-14 14:25:27 pid:60638 worker[none:60642] exit with status 64000
+2022-07-14 14:25:34 pid:60638 Workerman[server.php] stopping ...
+2022-07-14 14:25:34 pid:60638 Workerman[server.php] has been stopped
+2022-07-14 14:25:36 pid:60708 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:25:38 pid:60709 Error: Call to undefined function getUserId() in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:25
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(52): Workerman\Worker::runAll()
+#8 {main}
+2022-07-14 14:25:38 pid:60708 worker[none:60709] exit with status 64000
+2022-07-14 14:25:51 pid:60708 Workerman[server.php] stopping ...
+2022-07-14 14:25:51 pid:60708 Workerman[server.php] has been stopped
+2022-07-14 14:25:52 pid:60715 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:25:56 pid:60716 Error: Call to undefined function getUserId() in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php:25
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2502): {closure}()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Worker->acceptConnection()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(52): Workerman\Worker::runAll()
+#8 {main}
+2022-07-14 14:25:56 pid:60715 worker[none:60716] exit with status 64000
+2022-07-14 14:35:20 pid:60715 Workerman[server.php] stopping ...
+2022-07-14 14:35:20 pid:60715 Workerman[server.php] has been stopped
+2022-07-14 14:35:26 pid:61343 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:36:06 pid:61343 Workerman[server.php] stopping ...
+2022-07-14 14:36:06 pid:61343 Workerman[server.php] has been stopped
+2022-07-14 14:36:07 pid:61396 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:37:40 pid:61396 Workerman[server.php] stopping ...
+2022-07-14 14:37:40 pid:61396 Workerman[server.php] has been stopped
+2022-07-14 14:37:49 pid:61479 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:38:23 pid:61479 Workerman[server.php] stopping ...
+2022-07-14 14:38:23 pid:61479 Workerman[server.php] has been stopped
+2022-07-14 14:38:29 pid:61547 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:39:27 pid:61547 Workerman[server.php] stopping ...
+2022-07-14 14:39:27 pid:61547 Workerman[server.php] has been stopped
+2022-07-14 14:39:32 pid:61632 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:40:28 pid:61632 Workerman[server.php] stopping ...
+2022-07-14 14:40:28 pid:61632 Workerman[server.php] has been stopped
+2022-07-14 14:40:29 pid:61716 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:43:38 pid:61716 Workerman[server.php] stopping ...
+2022-07-14 14:43:38 pid:61716 Workerman[server.php] has been stopped
+2022-07-14 14:43:45 pid:61915 Workerman[server.php] start in DEBUG mode
+2022-07-14 14:47:21 pid:61915 Workerman[server.php] stopping ...
+2022-07-14 14:47:21 pid:61915 Workerman[server.php] has been stopped
+2022-07-14 14:49:11 pid:62333 Workerman[server.php] start in DEBUG mode
+2022-07-14 15:43:16 pid:62333 Workerman[server.php] stopping ...
+2022-07-14 15:43:16 pid:62333 Workerman[server.php] stopping ...
+2022-07-14 15:43:16 pid:62333 worker[none:62334] exit with status 65280
+2022-07-14 15:43:16 pid:62333 Workerman[server.php] has been stopped
+2022-07-14 17:08:29 pid:72036 Workerman[server.php] start in DEBUG mode
+2022-07-14 17:09:33 pid:72036 Workerman[server.php] stopping ...
+2022-07-14 17:09:33 pid:72036 Workerman[server.php] has been stopped
+2022-07-14 19:05:20 pid:80694 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:15:38 pid:80694 Workerman[server.php] stopping ...
+2022-07-14 19:15:38 pid:80694 Workerman[server.php] has been stopped
+2022-07-14 19:15:41 pid:81290 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:15:44 pid:81291 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Protocols/Websocket.php:230
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(40): Workerman\Connection\TcpConnection->send()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(638): {closure}()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#8 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#9 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(50): Workerman\Worker::runAll()
+#10 {main}
+2022-07-14 19:15:44 pid:81290 worker[none:81291] exit with status 64000
+2022-07-14 19:16:10 pid:81290 Workerman[server.php] stopping ...
+2022-07-14 19:16:10 pid:81290 Workerman[server.php] has been stopped
+2022-07-14 19:16:12 pid:81345 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:16:23 pid:81346 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Protocols/Websocket.php:230
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(40): Workerman\Connection\TcpConnection->send()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(638): {closure}()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#8 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#9 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(50): Workerman\Worker::runAll()
+#10 {main}
+2022-07-14 19:16:23 pid:81345 worker[none:81346] exit with status 64000
+2022-07-14 19:16:57 pid:81345 Workerman[server.php] stopping ...
+2022-07-14 19:16:57 pid:81345 Workerman[server.php] has been stopped
+2022-07-14 19:16:58 pid:81362 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:17:18 pid:81362 Workerman[server.php] stopping ...
+2022-07-14 19:17:18 pid:81362 Workerman[server.php] has been stopped
+2022-07-14 19:17:20 pid:81425 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:17:23 pid:81426 Exception: You can't send(NULL) to client, you need to convert it to a string.  in /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Protocols/Websocket.php:230
+Stack trace:
+#0 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(28): Workerman\Connection\TcpConnection->send()
+#2 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Connection/TcpConnection.php(638): {closure}()
+#3 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Events/Select.php(295): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(2437): Workerman\Events\Select->loop()
+#5 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1557): Workerman\Worker->run()
+#6 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1399): Workerman\Worker::forkOneWorkerForLinux()
+#7 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(1373): Workerman\Worker::forkWorkersForLinux()
+#8 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/vendor/workerman/workerman/Worker.php(550): Workerman\Worker::forkWorkers()
+#9 /var/www/html/admin/testchat.admin.host2bot.ru/public_html/socket/server.php(38): Workerman\Worker::runAll()
+#10 {main}
+2022-07-14 19:17:23 pid:81425 worker[none:81426] exit with status 64000
+2022-07-14 19:18:01 pid:81425 Workerman[server.php] stopping ...
+2022-07-14 19:18:01 pid:81425 Workerman[server.php] has been stopped
+2022-07-14 19:18:03 pid:81454 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:18:37 pid:81454 Workerman[server.php] stopping ...
+2022-07-14 19:18:37 pid:81454 Workerman[server.php] has been stopped
+2022-07-14 19:18:39 pid:81491 Workerman[server.php] start in DEBUG mode
+2022-07-14 19:23:59 pid:81491 Workerman[server.php] stopping ...
+2022-07-14 19:23:59 pid:81491 Workerman[server.php] has been stopped
+2022-07-15 07:45:24 pid:143459 Workerman[server.php] start in DEBUG mode
+2022-07-15 07:52:52 pid:143459 Workerman[server.php] stopping ...
+2022-07-15 07:52:52 pid:143459 Workerman[server.php] has been stopped
+2022-07-15 07:52:53 pid:144157 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:15:39 pid:144157 Workerman[server.php] stopping ...
+2022-07-15 08:15:39 pid:144157 Workerman[server.php] has been stopped
+2022-07-15 08:15:40 pid:146619 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:16:40 pid:146619 Workerman[server.php] stopping ...
+2022-07-15 08:16:40 pid:146619 Workerman[server.php] has been stopped
+2022-07-15 08:16:41 pid:146735 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:34:18 pid:146735 Workerman[server.php] stopping ...
+2022-07-15 08:34:18 pid:146735 Workerman[server.php] has been stopped
+2022-07-15 08:34:19 pid:148476 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:35:04 pid:148476 Workerman[server.php] stopping ...
+2022-07-15 08:35:04 pid:148476 Workerman[server.php] has been stopped
+2022-07-15 08:35:05 pid:148565 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:42:42 pid:148565 Workerman[server.php] stopping ...
+2022-07-15 08:42:42 pid:148565 Workerman[server.php] has been stopped
+2022-07-15 08:42:43 pid:149540 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:44:05 pid:149540 Workerman[server.php] stopping ...
+2022-07-15 08:44:05 pid:149540 Workerman[server.php] has been stopped
+2022-07-15 08:44:06 pid:149692 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:44:44 pid:149692 Workerman[server.php] stopping ...
+2022-07-15 08:44:44 pid:149692 Workerman[server.php] has been stopped
+2022-07-15 08:44:45 pid:149752 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:46:05 pid:149752 Workerman[server.php] stopping ...
+2022-07-15 08:46:05 pid:149752 Workerman[server.php] has been stopped
+2022-07-15 08:46:06 pid:149905 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:47:03 pid:149905 Workerman[server.php] stopping ...
+2022-07-15 08:47:03 pid:149905 Workerman[server.php] has been stopped
+2022-07-15 08:47:04 pid:149988 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:48:18 pid:149988 Workerman[server.php] stopping ...
+2022-07-15 08:48:18 pid:149988 Workerman[server.php] has been stopped
+2022-07-15 08:48:20 pid:150209 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:56:55 pid:150209 Workerman[server.php] stopping ...
+2022-07-15 08:56:55 pid:150209 Workerman[server.php] has been stopped
+2022-07-15 08:56:57 pid:151137 Workerman[server.php] start in DEBUG mode
+2022-07-15 08:58:21 pid:151137 Workerman[server.php] stopping ...
+2022-07-15 08:58:21 pid:151137 Workerman[server.php] has been stopped
+2022-07-15 08:58:22 pid:151354 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:12:40 pid:151354 Workerman[server.php] stopping ...
+2022-07-15 09:12:40 pid:151354 Workerman[server.php] has been stopped
+2022-07-15 09:12:42 pid:152510 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:13:02 pid:152510 Workerman[server.php] stopping ...
+2022-07-15 09:13:02 pid:152510 Workerman[server.php] has been stopped
+2022-07-15 09:13:03 pid:152582 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:13:58 pid:152582 Workerman[server.php] stopping ...
+2022-07-15 09:13:58 pid:152582 Workerman[server.php] has been stopped
+2022-07-15 09:13:59 pid:152680 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:14:25 pid:152680 Workerman[server.php] stopping ...
+2022-07-15 09:14:25 pid:152680 Workerman[server.php] has been stopped
+2022-07-15 09:14:26 pid:152789 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:14:49 pid:152789 Workerman[server.php] stopping ...
+2022-07-15 09:14:49 pid:152789 Workerman[server.php] has been stopped
+2022-07-15 09:14:50 pid:152838 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:15:24 pid:152838 Workerman[server.php] stopping ...
+2022-07-15 09:15:24 pid:152838 Workerman[server.php] has been stopped
+2022-07-15 09:15:25 pid:152951 Workerman[server.php] start in DEBUG mode
+2022-07-15 09:20:51 pid:152951 Workerman[server.php] stopping ...
+2022-07-15 09:20:51 pid:152951 Workerman[server.php] has been stopped
+2022-07-15 09:23:09 pid:153750 Workerman[server.php] start in DEBUG mode
+2022-07-15 11:43:20 pid:153750 Workerman[server.php] stopping ...
+2022-07-15 11:43:20 pid:153750 Workerman[server.php] stopping ...
+2022-07-15 11:43:20 pid:153750 Workerman[server.php] has been stopped
