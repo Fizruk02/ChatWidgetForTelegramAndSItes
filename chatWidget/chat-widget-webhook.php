@@ -21,7 +21,7 @@ $db-> connect();
 
 class loadFiles extends Db
 {
-    private $botToken = "6154617593:AAFIJ1d2bVnHUO89EggALb9UEsj4sfPG-0M";
+    private $botToken = "<BOT_TOKEN>";
     private $apiUrl = "https://api.telegram.org/bot";
 
     public function __construct(){ $this->connect(); }
